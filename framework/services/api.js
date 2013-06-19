@@ -7,7 +7,7 @@ pig.factory('api', function($http, $q, $timeout, base64) {
 	$http.defaults.headers.common["Content-Type"] = "application/json; charset=utf-8";
 	
 	api.getSubscriptions = function() {
-		return $http.get(baseUrl+'subscriptions.json', function(results) {
+		return $http.get(baseUrl+'subscriptions.json').then(function(results) {
 			return results.data;
 		});
 		
